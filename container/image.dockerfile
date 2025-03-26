@@ -1,29 +1,29 @@
-#minha imagem
+#my image
 FROM mysql:8.0.41-debian
 
-#responsavel pela imagem
+#responsible for the image
 USER root
 
-#define uma váriavel para o meu host
+#define a variable for my host
 ENV host="127.0.0.1"
 
-#define uma váriavel para o minha porta
+#define a variable for my port
 ENV port="8080"
 
-#define uma váriavel para o meu usuário
+#define a variable for my user
 ENV user = "ana"
 
-#copia os arquivos de requeriments do meu ambiente para o contâiner
-COPY folder/requirements.txt /dir
+#copy the requirements files from my environment to the container
+COPY C:/Users/asantalm/Documents/BECA/docker/requirements.txt
 
-#copia o arquivo de python do meu ambiente para o contâiner
-COPY folder/teste.py /dir
+#copy the python file from my environment to the container
+COPY C:/Users/asantalm/Documents/BECA/docker/teste.py
 
-#criando uma pasta e levando os arquivos do meu ambiente para o contâiner
-RUN mkdir /requirements.txt
+#creating a folder and taking the files from my environment to the container
+RUN mkdir /requirements
 
-#criando uma pasta e levando o arquivo python do meu ambiente para o contâiner
+#creating a folder and taking the python file from my environment to the container
 RUN mkdir /dev
 
-#instalar meus requeriments no meu contâiner
+#install my requirements in my containervocê criou a pasta no comando acima, mas não copiou o requirements pra dentro do dev
 RUN pip install -r /dev/requirements
